@@ -68,4 +68,5 @@ Articles API is a RESTful API built with Node.js and Express, using MongoDB as t
 - `PATCH /categories/:id` - Update an existing category (requires authentication)
 - `DELETE /categories/:id` - Delete a category (requires authentication)
 ##
-![articlesAPI](https://github.com/user-attachments/assets/5a621419-9d58-41a2-96d9-856e3f1d15f0)
+![articlesAPI](https://github.com/user-attachments/assets/bcd38c4e-1437-41fd-8275-399795e5a64e)
+
