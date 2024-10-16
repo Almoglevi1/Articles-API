@@ -1,4 +1,4 @@
-const multer = require('multer'); // Import multer for handling file uploads
+import multer from 'multer';  // Import multer for handling file uploads
 
 // Configure storage settings for multer
 const storage = multer.diskStorage({
@@ -31,4 +31,4 @@ const upload = multer({
     fileFilter // Use the defined file filter
 });
 
-module.exports = upload; 
+export default upload;

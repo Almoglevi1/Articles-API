@@ -1,6 +1,4 @@
-const jwt = require('jsonwebtoken'); // Import jsonwebtoken for token verification
-require('dotenv').config(); // Import dotenv for environment variables
-
+import jwt from 'jsonwebtoken'; // Import jsonwebtoken for token verification
 
 // Middleware function to check authentication
 const checkAuth = (req, res, next) => {
@@ -19,4 +17,4 @@ const checkAuth = (req, res, next) => {
     }
 }
 
-module.exports = checkAuth;
+export default checkAuth;

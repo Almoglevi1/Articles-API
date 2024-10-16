@@ -1,17 +1,9 @@
-const express = require('express');
+import express from 'express';
+import upload from '../middlewares/upload';
+import checkAuth from '../middlewares/checkAuth';
+import { getAllArticles, createArticle, getArticle, updateArticle, deleteArticle } from '../controllers/articlesController';
+
 const router = express.Router();
-
-const upload = require('../middlewares/upload');
-const checkAuth = require('../middlewares/checkAuth');
-
-// Import controller functions for handling article-related requests
-const {
-    getAllArticles,
-    createArticle,
-    getArticle,
-    updateArticle,
-    deleteArticle
-} = require('../controllers/articlesControllers')
 
 // Route to get all articles
 router.get('/', getAllArticles);
@@ -28,4 +20,4 @@ router.patch('/:articleId', checkAuth, updateArticle);
 // Route to delete an article by its ID, with authentication middleware
 router.delete('/:articleId', checkAuth, deleteArticle);
 
-module.exports = router;
+export default router;
