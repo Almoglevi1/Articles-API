@@ -1,8 +1,8 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import morgan from 'morgan';
-import connectToDB from './config/connectToDB';
 import cors from 'cors';
+import connectToDB from './config/connectToDB';
 import { notFoundHandler, errorHandler } from './middlewares/errorHandler';
 import articlesRoutes from './routes/articlesRoutes';
 import categoriesRoutes from './routes/categoriesRoutes';

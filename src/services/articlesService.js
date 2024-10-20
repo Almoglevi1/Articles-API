@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import Article from '../models/Article';
 import Category from '../models/Category';
 
-export const getAllArticles = async () => {
+export const getAllArticlesService = async () => {
     try {
         // Find all articles and populate the categoryId field with the title
         const articles = Article.find().populate('categoryId', 'title');
@@ -18,7 +18,7 @@ export const getAllArticles = async () => {
     }
 };
 
-export const createArticle = async (data, file) => {
+export const createArticleService = async (data, file) => {
     const { title, description, content, categoryId } = data;
     const { path: image } = file;
 
@@ -71,7 +71,7 @@ export const createArticle = async (data, file) => {
     }
 };
 
-export const getArticle = async (articleId) => {
+export const getArticleService = async (articleId) => {
     // Validate the articleId
     if (!mongoose.Types.ObjectId.isValid(articleId)) {
         throw new Error('Invalid article ID, a valid ID should contain 24-characters hexadecimal string');
@@ -92,7 +92,7 @@ export const getArticle = async (articleId) => {
     }
 };
 
-export const updateArticle = async (articleId, data) => {
+export const updateArticleService = async (articleId, data) => {
     const { categoryId } = data;
 
     // Validate the articleId
@@ -129,7 +129,7 @@ export const updateArticle = async (articleId, data) => {
     }
 };
 
-export const deleteArticle = async (articleId) => {
+export const deleteArticleService = async (articleId) => {
     // Validate the articleId
     if (!mongoose.Types.ObjectId.isValid(articleId)) {
         throw new Error('Invalid article ID, a valid ID should contain 24-characters hexadecimal string');

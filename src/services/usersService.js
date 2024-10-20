@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import User from '../models/User';
 
-export const signup = async (userData) => {
+export const signupService = async (userData) => {
     const { email, password } = userData;
 
     // Regular expression for validating email format
@@ -37,7 +37,7 @@ export const signup = async (userData) => {
     }
 };
 
-export const login = async (userData) => {
+export const loginService = async (userData) => {
     const { email, password } = userData;
 
     try {

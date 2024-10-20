@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import Category from '../models/Category';
 
-export const getAllCategories = async () => {
+export const getAllCategoriesService = async () => {
     try {
         const categories = await Category.find();
 
@@ -16,7 +16,7 @@ export const getAllCategories = async () => {
     }
 };
 
-export const createCategory = async (data) => {
+export const createCategoryService = async (data) => {
     // Validate the title
     if (!data.title || typeof data.title !== 'string' || data.title.trim() === '') {
         throw new Error('Invalid title, it should be a non-empty string');
@@ -42,7 +42,7 @@ export const createCategory = async (data) => {
     }
 };
 
-export const getCategory = async (categoryId) => {
+export const getCategoryService = async (categoryId) => {
     // Validate the categoryId
     if (!mongoose.Types.ObjectId.isValid(categoryId)) {
         throw new Error('Invalid category ID, a valid ID should contain 24-characters hexadecimal string');
@@ -62,7 +62,7 @@ export const getCategory = async (categoryId) => {
     }
 };
 
-export const updateCategory = async (categoryId, data) => {
+export const updateCategoryService = async (categoryId, data) => {
     // Validate the categoryId
     if (!mongoose.Types.ObjectId.isValid(categoryId)) {
         throw new Error('Invalid category ID, a valid ID should contain 24-characters hexadecimal string');
@@ -83,7 +83,7 @@ export const updateCategory = async (categoryId, data) => {
     }
 };
 
-export const deleteCategory = async (categoryId) => {
+export const deleteCategoryService = async (categoryId) => {
     // Validate the categoryId
     if (!mongoose.Types.ObjectId.isValid(categoryId)) {
         throw new Error('Invalid category ID, a valid ID should contain 24-characters hexadecimal string');
